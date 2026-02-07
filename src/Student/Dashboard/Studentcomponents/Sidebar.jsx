@@ -1,4 +1,3 @@
-import { NavLink, useNavigate } from "react-router-dom"
 import {
   Home,
   PenLine,
@@ -7,6 +6,7 @@ import {
   FileText,
   LogOut
 } from "lucide-react"
+import { NavLink, useNavigate } from "react-router-dom"
 
 const Sidebar = () => {
   const navigate = useNavigate()
