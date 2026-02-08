@@ -72,6 +72,19 @@ const AdminSidebar = () => {
             <FileBarChart size={20} />
             Mess Analytics
           </NavLink>
+          <NavLink to="/admin/mess-complaints" className={linkClass}>
+            <UtensilsCrossed size={20} />
+            Mess Complaints
+          </NavLink>
+          <NavLink to="/admin/mess-issues" className={linkClass}>
+            <UtensilsCrossed size={20} />
+            Review Mess Issues
+          </NavLink>
+
+          <NavLink to="/admin/mess-reports" className={linkClass}>
+            <FileBarChart size={20} />
+            Mess Reports
+          </NavLink>
         </div>
       </div>
     </div>

@@ -19,6 +19,10 @@ import AdminLeaves from "./Admin/AdminDashboard/AdminLeaves";
 import CreateMenu from "./Admin/AdminDashboard/MessCreate";
 import MessAnalytics from "./Admin/AdminDashboard/MessAnalytics";
 import AdminLayout from "./Admin/AdminDashboard/AdminLayout";
+import RaiseMessIssue from "./Student/Dashboard/RaiseMessIssue";
+import MyMessIssues from "./Student/Dashboard/MyMessIssues";
+import ReviewMessIssues from "./Admin/AdminDashboard/ReviewMessIssues";
+import MessReports from "./Admin/AdminDashboard/MessReports";
 
 
 function App() {
@@ -56,6 +60,8 @@ function App() {
         <Route path="/student/Leaves" element={<StudentLayout><ApplyLeave /></StudentLayout>} />
         <Route path="/student/myleave" element={<StudentLayout><MyLeaves /></StudentLayout>} />
         <Route path="/student/messpage" element={<StudentLayout><MessPage /></StudentLayout>} />
+        <Route path="/student/raise-mess-issue" element={<StudentLayout><RaiseMessIssue /></StudentLayout>} />
+        <Route path="/student/my-mess-issues" element={<StudentLayout><MyMessIssues /></StudentLayout>} />
 
         {/* Admin Routes - Wrapped in AdminLayout */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -64,6 +70,9 @@ function App() {
         <Route path="/admin/Leaves" element={<AdminLayout><AdminLeaves /></AdminLayout>} />
         <Route path="/admin/createmenu" element={<AdminLayout><CreateMenu /></AdminLayout>} />
         <Route path="/admin/messAnalytics" element={<AdminLayout><MessAnalytics /></AdminLayout>} />
+        <Route path="/admin/mess-issues" element={<AdminLayout><ReviewMessIssues /></AdminLayout>} />
+        <Route path="/admin/mess-complaints" element={<AdminLayout><ReviewMessIssues /></AdminLayout>} />
+        <Route path="/admin/mess-reports" element={<AdminLayout><MessReports /></AdminLayout>} />
 
       </Routes>
     </>

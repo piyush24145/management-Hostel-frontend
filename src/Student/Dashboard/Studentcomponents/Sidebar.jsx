@@ -5,7 +5,8 @@ import {
   FilePlus,
   FileText,
   LogOut,
-  UserCircle
+  UserCircle,
+  UtensilsCrossed
 } from "lucide-react"
 import { NavLink, useNavigate } from "react-router-dom"
 
@@ -90,8 +91,18 @@ const Sidebar = ({ studentName = "Student" }) => {
           </NavLink>
 
           <NavLink to="/student/messpage" className={linkClass}>
-            <FileText size={20} />
-            Mess
+            <UtensilsCrossed size={20} />
+            Mess Menu
+          </NavLink>
+
+          <NavLink to="/student/raise-mess-issue" className={linkClass}>
+            <PenLine size={20} />
+            Raise Mess Issue
+          </NavLink>
+
+          <NavLink to="/student/my-mess-issues" className={linkClass}>
+            <ClipboardList size={20} />
+            My Mess Issues
           </NavLink>
         </div>
       </div>
