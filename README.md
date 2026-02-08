@@ -1,16 +1,54 @@
-# React + Vite
+# 🏥 **HostelMate** - Hostel Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive MERN stack application designed to streamline hostel operations, including student complaints, mess management, leave requests, and administrative reporting.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🧑‍🎓 Student Portal
+- **Dashboard**: Real-time overview of complaints, mess menu, and leave status.
+- **Raise Complaints**: Submit maintenance issues (Electrical, Plumbing, etc.) with image upload.
+- **Mess Management**:
+    - View daily mess menu.
+    - **Raise Mess Issues**: Report food quality or hygiene concerns (Glassmorphic UI).
+    - **My Mess Issues**: Track status of reported mess complaints.
+- **Leave Applications**: Apply for leave and track approval status.
+- **Notice Board**: View important announcements.
 
-## Expanding the ESLint configuration
+### 👮‍♂️ Admin Portal
+- **Dashboard**: Analytics for complaints, mess issues, and student activity.
+- **Complaint Management**: Review, assign, and resolve student complaints.
+- **Mess Administration**:
+    - **Create Mess Menu**: Update daily meals.
+    - **Review Mess Issues**: Manage student feedback on food/hygiene.
+    - **Mess Reports**: Analytics on most reported issues and resolution rates.
+- **Leave Management**: Approve or reject student leave requests.
+- **Student Management**: View all registered students.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+### **Frontend**
+- **React.js** (Vite)
+- **Tailwind CSS** (Styling & Glassmorphism)
+- **Lucide React** (Icons)
+- **Axios** (API Requests)
+- **Chart.js / Recharts** (Analytics)
+
+### **Backend**
+- **Node.js & Express.js**
+- **MongoDB** (Database)
+- **Mongoose** (ODM)
+- **JWT** (Authentication)
+- **Bcrypt.js** (Password Hashing)
+- **Multer** (Image Uploads)
+
+---
+
+
+
+
+## 📄 License
+This project is licensed under the MIT License.
