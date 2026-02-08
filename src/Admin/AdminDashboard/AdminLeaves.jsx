@@ -39,6 +39,20 @@ function AdminLeaves() {
         }
     }
 
+    const reject = async (id) => {
+        const token = localStorage.getItem("token")
+        try {
+            await axios.put(
+                `http://localhost:5000/api/leave/admin/reject/${id}`,
+                {},
+                { headers: { Authorization: `Bearer ${token}` } }
+            )
+            load()
+        } catch (error) {
+            alert("Failed to reject leave")
+        }
+    }
+
     return (
         <div className="min-h-screen">
 
@@ -62,7 +76,7 @@ function AdminLeaves() {
                     {leaves.map(l => (
                         <div
                             key={l._id}
-                            className="bg-white/10 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-lg hover:bg-white/15 transition-all group relative overflow-hidden"
+                            className="bg-white/10 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-lg hover:bg-white/15 transition-all relative"
                         >
                             {/* Status Badge */}
                             <div className={`absolute top-0 right-0 px-3 py-1 text-xs font-bold rounded-bl-xl
@@ -94,24 +108,36 @@ function AdminLeaves() {
                                 </div>
                             </div>
 
+                            {/* ACTION BUTTONS */}
                             {l.status === "Pending" ? (
-                                <button
-                                    onClick={() => approve(l._id)}
-                                    className="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
-                                >
-                                    <CheckCircle size={18} />
-                                    Approve Request
-                                </button>
+                                <div className="flex gap-3">
+                                    <button
+                                        onClick={() => approve(l._id)}
+                                        className="flex-1 bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                                    >
+                                        <CheckCircle size={18} />
+                                        Approve
+                                    </button>
+
+                                    <button
+                                        onClick={() => reject(l._id)}
+                                        className="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-2.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                                    >
+                                        <XCircle size={18} />
+                                        Reject
+                                    </button>
+                                </div>
                             ) : (
                                 <div className="w-full bg-white/5 border border-white/10 text-slate-400 font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 cursor-default">
-                                    {l.status === "Approved" ? <CheckCircle size={18} className="text-green-500" /> : <XCircle size={18} className="text-red-500" />}
+                                    {l.status === "Approved"
+                                        ? <CheckCircle size={18} className="text-green-500" />
+                                        : <XCircle size={18} className="text-red-500" />
+                                    }
                                     {l.status}
                                 </div>
                             )}
-
                         </div>
                     ))}
-
                 </div>
             )}
         </div>

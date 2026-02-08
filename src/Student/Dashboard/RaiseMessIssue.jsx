@@ -1,8 +1,10 @@
 import { useState } from "react"
 import axios from "axios"
 import { UtensilsCrossed } from "lucide-react"
+import { useNavigate } from "react-router-dom";
 
 const RaiseMessIssue = () => {
+     const Navigate=useNavigate();
     const [form, setForm] = useState({
         issueType: "",
         mealType: "",
@@ -26,7 +28,7 @@ const RaiseMessIssue = () => {
             )
 
             alert("Mess complaint submitted")
-
+Navigate("/student/my-mess-issues");
             setForm({
                 issueType: "",
                 mealType: "",

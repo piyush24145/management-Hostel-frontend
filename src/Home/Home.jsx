@@ -44,7 +44,7 @@ const Home = () => {
 
       {/* Optional Footer - Hidden on very small screens if needed, or adjust position */}
       <div className="absolute bottom-2 text-gray-500 text-[10px] md:text-xs z-10 w-full text-center">
-        © 2024 Hostel Management System. All rights reserved.
+        © 2026 Hostel Management System. All rights reserved.
       </div>
     </div>
   );
